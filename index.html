@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniStream - Anime Ad Free Streaming</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <a href="#series"></a>
+
+  <div id="videoModal" class="modal-custom">
+    <div class="modal-content" style="max-width:800px;">
+
+      <h2 id="animeTitle"></h2>
+
+      <a id="animeLink" href="" target="_blank">
+        <img id="animeImage" src="" alt="" style="width:100%; border-radius:15px;">
+        <p id="animeUrl"></p>
+      </a>
+
+      <button onclick="closeVideo()">Tutup</button>
+    </div>
+  </div>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader"></div>
+  </div>
+
+
+
+
+  <!-- MODAL CUSTOM -->
+  <div id="modal" class="modal-custom">
+    <div class="modal-content">
+      <i class="bi bi-info-circle-fill" style="font-size: 3rem; color: #ffd966;"></i>
+      <h3 id="modalTitle" style="margin: 15px 0;">Info</h3>
+      <p id="modalMessage">Pesan disini</p>
+      <button onclick="closeModal()">Tutup</button>
+    </div>
+  </div>
+
+  <!-- CONTENT UTAMA WEBSITE -->
+  <div id="content">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dongker">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <div class="logo-a text-center">A</div>
+          <span>AniStream</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link nav-link-custom active" data-page="home">Home</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" data-page="series">Series</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" data-page="movie">Movie</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" data-page="manga">Manga</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" data-page="games">Games</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" data-page="premium">Premium</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" data-page="gettheapp">GetTheApp</a></li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" class="social-fb"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-yt"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="homeSection">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <span class="badge-hype"><i class="bi bi-stars me-1"></i> MOST HYPE ANIME</span>
+            <h1>
+              NOW ANIME<br>
+              <span class="anime-series-text">ATTACK ON TITAN</span>
+              <span class="ad-free-badge"><i class="bi bi-shield-check"></i> AD FREE</span>
+            </h1>
+            <p class="desc-text">
+              Our most hype anime! Release date: right at the end of this summer.<br>
+              Update is to be on the same day as the first season, so you can watch it in one place and enjoy it all.
+            </p>
+            <div class="d-flex gap-3 flex-wrap">
+              <button class="btn btn-primary-custom watch-now-btn" data-title="Attack On Titan"
+                data-image="image/aot.jpg" data-link="https://youtu.be/8_iG8nEoRps?si=dNcBEtP7ExdM7XVc">
+
+                <i class="bi bi-play-fill me-1"></i>
+                Watch Now
+              </button>
+              <button class="btn btn-outline-custom learn-more-btn"><i class="bi bi-info-circle me-1"></i> Learn
+                More</button>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="floating-card-portrait">
+              <div class="card-logo-a-portrait">A</div>
+              <h3>Stream Anytime</h3>
+              <p>Watch ad-free, ultra HD, simulcast same day as Japan. Download and watch offline anywhere.</p>
+              <div class="card-buttons-portrait-row">
+                <button class="btn btn-primary-custom watch-now-btn" data-title="Attack On Titan"
+                  data-image="image/aot.jpg" data-link="https://youtu.be/8_iG8nEoRps?si=dNcBEtP7ExdM7XVc">
+
+                  <i class="bi bi-play-fill me-1"></i>
+                  Watch Now
+                </button>
+                <button class="card-btn-outline-portrait save-btn"><i class="bi bi-bookmark me-1"></i> Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY OUR APP SECTION -->
+    <section class="why-app-section">
+      <div class="container">
+        <h2 class="section-title-white">WHY OUR APP</h2>
+        <div class="row text-center justify-content-center g-4">
+          <div class="col-md-3 col-6 feature-item" data-feature="Watch Anime">
+            <div class="circle-item">
+              <div class="circle-icon"><i class="bi bi-tv-fill"></i></div>
+              <h4 class="circle-title">Watch Anime</h4>
+              <p class="circle-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 feature-item" data-feature="Read Manga">
+            <div class="circle-item">
+              <div class="circle-icon"><i class="bi bi-book-fill"></i></div>
+              <h4 class="circle-title">Read Manga</h4>
+              <p class="circle-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 feature-item" data-feature="Personalise">
+            <div class="circle-item">
+              <div class="circle-icon"><i class="bi bi-person-circle"></i></div>
+              <h4 class="circle-title">Personalise</h4>
+              <p class="circle-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 feature-item" data-feature="Ad Free">
+            <div class="circle-item">
+              <div class="circle-icon"><i class="bi bi-shield-check"></i></div>
+              <h4 class="circle-title">Ad Free</h4>
+              <p class="circle-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+      <div class="container">
+        <span class="cta-badge"><i class="bi bi-stars me-1"></i> LIMITED OFFER</span>
+        <h2 class="cta-title">NOW AVAILABLE</h2>
+        <h3 class="cta-subtitle">Watch Any Anime Series</h3>
+        <p class="cta-text">
+          Ad Free On Our App — Experience the ultimate anime streaming without any interruptions.<br>
+          Get access to thousands of episodes, simulcast releases, and exclusive content.
+        </p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary-custom watch-now-btn" data-title="Attack On Titan" data-image="image/aot.jpg"
+            data-link="https://youtu.be/8_iG8nEoRps?si=dNcBEtP7ExdM7XVc">
+
+            <i class="bi bi-play-fill me-1"></i>
+            Watch Now
+          </button>
+          <button class="btn btn-outline-custom learn-more-btn"><i class="bi bi-info-circle me-1"></i> Learn
+            More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <small>© 2026 AniStream — Anime ad-free streaming. All rights reserved.</small>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+
+
+
+    // ==================== TOAST NOTIFICATION ====================
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'toast-notification';
+      toast.innerHTML = `<i class="bi bi-check-circle-fill me-2"></i> ${message}`;
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // ==================== MODAL ====================
+    function showModal(title, message) {
+      const modal = document.getElementById('modal');
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalMessage').innerHTML = message;
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('active');
+    }
+
+    // ==================== FITUR NAVIGASI MENU ====================
+    function setActiveMenu(activePage) {
+      document.querySelectorAll('.nav-link-custom').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-page') === activePage) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    const originalHero = document.querySelector('.hero-section').innerHTML;
+
+    function loadPage(page) {
+
+
+      const pages = {
+
+        series: {
+          title: 'Anime Series',
+          desc: 'Koleksi anime series terbaru.'
+        },
+
+        movie: {
+          title: 'Anime Movie',
+          desc: 'Film anime terbaik sepanjang masa.'
+        },
+
+        manga: {
+          title: 'Manga',
+          desc: 'Baca manga favoritmu.'
+        },
+
+        games: {
+          title: 'Anime Games',
+          desc: 'Mainkan game anime seru.'
+        },
+
+        premium: {
+          title: 'Premium',
+          desc: 'Nikmati fitur premium AniStream.'
+        },
+
+        gettheapp: {
+          title: 'Get The App',
+          desc: 'Download aplikasi AniStream sekarang.'
+        }
+      };
+
+      const current = pages[page];
+
+      hero.innerHTML = `
+    <div class="container text-white text-center">
+      <h1>${current.title}</h1>
+      <p class="fs-4">${current.desc}</p>
+
+      <button class="btn btn-primary-custom mt-3 watch-now-btn">
+        <i class="bi bi-play-fill"></i>
+        Watch Now
+      </button>
+    </div>
+  `;
+
+      hero.style.display = 'flex';
+
+      initButtons();
+    }
+
+    // ==================== SOSIAL MEDIA ====================
+    document.querySelector('.social-fb')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      showModal('Facebook', 'Kunjungi halaman Facebook kami! 👍');
+    });
+    document.querySelector('.social-twitter')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      showModal('Twitter', 'Ikuti kami di Twitter! 🐦');
+    });
+    document.querySelector('.social-yt')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      showModal('YouTube', 'Subscribe channel YouTube kami! 📺');
+    });
+
+    // ==================== WATCH NOW BUTTONS ====================
+    document.querySelectorAll('.watch-now-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openVideo();
+      });
+    });
+
+    // ==================== LEARN MORE BUTTONS ====================
+    document.querySelectorAll('.learn-more-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showModal('ℹ️ Learn More', 'AniStream adalah platform streaming anime terbaik.<br>✅ Tanpa Iklan<br>✅ Streaming 4K Ultra HD<br>✅ Simulcast same day as Japan<br>✅ Download offline');
+      });
+    });
+
+    // ==================== SAVE BUTTON ====================
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const username = localStorage.getItem('username') || 'User';
+        showModal('💾 Berhasil Disimpan!', `${username}, anime ini telah ditambahkan ke daftar tontonan Anda!`);
+      });
+    });
+
+    // ==================== FEATURE ITEMS (WHY OUR APP) ====================
+    document.querySelectorAll('.feature-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const feature = item.getAttribute('data-feature');
+        const messages = {
+          'Watch Anime': 'Nikmati ribuan episode anime favorit Anda! ✨',
+          'Read Manga': 'Baca manga terbaru dengan kualitas HD! 📚',
+          'Personalise': 'Sesuaikan pengalaman menonton Anda! 🎨',
+          'Ad Free': 'Tonton tanpa iklan yang mengganggu! 🚫📢'
+        };
+        showModal(feature, messages[feature] || 'Fitur keren dari AniStream!');
+      });
+    });
+
+    // ==================== FEATURE CIRCLES ====================
+    document.querySelectorAll('.circle-item').forEach(circle => {
+      circle.addEventListener('click', function () {
+        const title = this.querySelector('.circle-title')?.innerText || 'Fitur';
+        showModal(title, 'Klik untuk mengetahui lebih lanjut tentang fitur ini!');
+      });
+    });
+
+    // ==================== NAVBAR BRAND CLICK ====================
+    document.querySelector('.navbar-brand')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      setActiveMenu('home');
+      showToast('Kembali ke beranda! 🏠');
+    });
+
+    function loadPage(page) {
+      const hero = document.querySelector('.hero-section');
+      const why = document.querySelector('.why-app-section');
+      const cta = document.querySelector('.cta-section');
+
+      hero.style.display = 'none';
+      why.style.display = 'none';
+      cta.style.display = 'none';
+
+      switch (page) {
+        case 'home':
+          hero.style.display = 'flex';
+          why.style.display = 'block';
+          cta.style.display = 'flex';
+          break;
+
+        case 'series':
+          hero.innerHTML = `
+        <div class="container text-white">
+          <h1>Anime Series</h1>
+          <p>Koleksi anime series terbaru.</p>
+        </div>
+      `;
+          hero.style.display = 'flex';
+          break;
+
+        case 'movie':
+          hero.innerHTML = `
+        <div class="container text-white">
+          <h1>Anime Movie</h1>
+          <p>Film anime terbaik sepanjang masa.</p>
+        </div>
+      `;
+          hero.style.display = 'flex';
+          break;
+
+        case 'manga':
+          hero.innerHTML = `
+        <div class="container text-white">
+          <h1>Manga</h1>
+          <p>Baca manga favoritmu.</p>
+        </div>
+      `;
+          hero.style.display = 'flex';
+          break;
+      }
+    }
+
+    document.querySelectorAll('.watch-now-btn').forEach(btn => {
+
+      btn.addEventListener('click', () => {
+
+        const title = btn.dataset.title;
+        const image = btn.dataset.image;
+        const link = btn.dataset.link;
+
+        document.getElementById('animeTitle').innerText = title;
+
+        document.getElementById('animeImage').src = image;
+
+        document.getElementById('animeLink').href = link;
+
+        document.getElementById('animeUrl').innerText = link;
+
+        document.getElementById('videoModal')
+          .classList.add('active');
+      });
+
+    });
+
+    function closeVideo() {
+
+      document.getElementById('videoModal')
+        .classList.remove('active');
+
+    }
+
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+
+        let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+
+        watchlist.push({
+          title: 'Anime Favorite',
+          savedAt: new Date()
+        });
+
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+
+        showToast('Anime berhasil disimpan! 💾');
+      });
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+
+      const savedUser = localStorage.getItem("username");
+
+      if (savedUser) {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }
+    });
+
+    function activatePremium() {
+
+      localStorage.setItem('premium', 'true');
+
+      showToast('Premium Activated 💎');
+    }
+
+    fetch('https://api.jikan.moe/v4/top/anime')
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      });
+
+    window.addEventListener('hashchange', () => {
+
+      const page = location.hash.replace('#', '');
+
+      loadPage(page);
+    });
+  </script>
+
+</body>
+
+</html>
