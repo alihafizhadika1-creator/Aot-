@@ -140,7 +140,7 @@
     .hero-section {
       position: relative;
       min-height: 100vh;
-      background-image: url('image/utama.webp');
+      background-image: url('./image/utama.webp');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -243,7 +243,7 @@
 
 /* JENDELA MENGAMBANG PORTRAIT */
 .floating-card-portrait {
-  background: url("image/muka.webp");
+  background: url("./image/muka.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -421,7 +421,7 @@
     .cta-section {
       position: relative;
       min-height: 60vh;
-      background-image: url('image/RUMBLING.jpg');
+      background-image: url('./image/RUMBLING.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
