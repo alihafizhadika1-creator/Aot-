@@ -9,42 +9,7 @@
       font-family: 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif;
     }
 
-    /* LOADER */
-    #loader {
-      position: fixed;
-      inset: 0;
-      background: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
-    }
-    #loader.fade-out {
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-
-    .loader {
-      width: 60px;
-      height: 60px;
-      position: relative;
-      --c: no-repeat linear-gradient(#25b09b 0 0);
-      background: var(--c) center/100% 10px, var(--c) center/10px 100%;
-    }
-    .loader:before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--c) 0 0, var(--c) 100% 0, var(--c) 0 100%, var(--c) 100% 100%;
-      background-size: 20px 20px;
-      animation: l16 1.5s infinite;
-    }
-    @keyframes l16 {
-      33% { inset: -12px; }
-      66% { transform: rotate(90deg); }
-    }
-
+  
     
 
     /* TOAST NOTIFICATION */
