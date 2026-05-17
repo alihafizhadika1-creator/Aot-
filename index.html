@@ -451,15 +451,7 @@
       });
     });
 
-    window.addEventListener("DOMContentLoaded", () => {
 
-      const savedUser = localStorage.getItem("username");
-
-      if (savedUser) {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      }
-    });
 
     function activatePremium() {
 
@@ -479,6 +471,10 @@
       const page = location.hash.replace('#', '');
 
       loadPage(page);
+    });
+    window.addEventListener("load", () => {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("content").style.display = "block";
     });
   </script>
 
